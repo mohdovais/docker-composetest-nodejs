@@ -1,0 +1,20 @@
+version: "3"
+services:
+  web:
+    build: ./external
+    ports:
+      - "3000:3000"
+    environment:
+      PROXY_HOST: "http://internalservice:3001"
+      PORT: 3000
+      PERSIST_STORAGE: /storage
+    volumes:
+      - composetest:/storage
+  internalservice:
+    build: ./internal
+    environment:
+        PERSIST_STORAGE: /storage
+    volumes:
+      - composetest:/storage
+volumes:
+  composetest:

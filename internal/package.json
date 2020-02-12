@@ -1,0 +1,12 @@
+{
+  "name": "internal",
+  "private": true,
+  "description": "Internal api, not supposed to exposed outside world",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "polka": "^0.5.2"
+  }
+}
